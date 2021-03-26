@@ -6,6 +6,15 @@ import android.net.Uri;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import uk.co.workingedge.RNLaunchNavigator.RNLaunchNavigatorPackage;
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+import com.reactnativecommunity.geolocation.GeolocationPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -27,6 +36,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Nullable;
+import com.airbnb.android.react.maps.MapsPackage;
 
 public class MainApplication extends Application implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
@@ -39,12 +49,30 @@ public class MainApplication extends Application implements ReactApplication {
       return BuildConfig.DEBUG;
     }
 
-    @Override
+     @Override
     protected List<ReactPackage> getPackages() {
-      List<ReactPackage> packages = new PackageList(this).getPackages();
-      packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
-      return packages;
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+            new RNLaunchNavigatorPackage(),
+            new SafeAreaContextPackage(),
+            new RNGestureHandlerPackage(),
+            //new RNGestureHandlerPackage(),
+            // new RNCMaskedViewPackage(),
+             //new RNGestureHandlerPackage(),
+            // new RNGestureHandlerPackage(),
+            // new RNCMaskedViewPackage(),
+            new GeolocationPackage(),
+              new MapsPackage()
+      );
     }
+    
+
+    // @Override
+    // protected List<ReactPackage> getPackages() {
+    //   List<ReactPackage> packages = new PackageList(this).getPackages();
+    //   packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
+    //   return packages;
+    // }
 
     @Override
     protected String getJSMainModuleName() {
@@ -75,6 +103,8 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost;
   }
 
+  
+
   @Override
   public void onCreate() {
     super.onCreate();
@@ -86,6 +116,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
+
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like

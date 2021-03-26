@@ -1,9 +1,32 @@
 # OSX
 #
 .DS_Store
-
+MyFirstApp/
+Untitled.png
+androidx/
+ios/App.js
+ios/index.js
 # Xcode
 #
+/node_modules
+arrow.png
+bin.js
+down.png
+download.jpg
+signing-config.json
+download.png
+filter.jpg
+map.jpg
+map.png
+new.jpg
+new.js
+s.png
+search.png
+store.js
+unnamed.jpg
+up.png
+w.jpg
+w.png
 build/
 *.pbxuser
 !default.pbxuser
