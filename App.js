@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import FirstPage from './pages/FirstPage';
 import SecondPage from './pages/SecondPage';
-import ThirdPage from './pages/ThirdPage';
+
 
 
 const App = createStackNavigator({
